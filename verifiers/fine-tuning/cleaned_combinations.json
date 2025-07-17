@@ -1,0 +1,1941 @@
+[
+  {
+    "input": "I am looking for a high-performance cluster with at least 128GB DDR4 memory, and a GPU that is not NVIDIA A100. I want to include InfiniBand Networking and Remote Management Module in my cluster.",
+    "output": {
+      "product": "High-Performance Compute Cluster",
+      "package": "Standard",
+      "compute_units": [
+        "CPU:AMD EPYC 7742"
+      ],
+      "memory": "128GB DDR4",
+      "storage": "1TB SSD",
+      "features": [
+        "InfiniBand Networking",
+        "Remote Management Module"
+      ]
+    }
+  },
+  {
+    "input": "I need a workstation with 64GB DDR4 RAM, NVIDIA RTX A6000 GPU and 1TB NVMe Storage",
+    "output": {
+      "product": "AI Training Workstation",
+      "package": "Developer",
+      "compute_units": [
+        "GPU",
+        "NVIDIA RTX A6000"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "1TB NVMe",
+      "features": [
+        "Docker & ML Frameworks Pre-installed"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a product that has 16GB DDR4 RAM, 512GB SSD storage and Secure Boot feature. The base price should be around $5000.",
+    "output": {
+      "product": "Edge Computing Gateway",
+      "package": "Basic",
+      "compute_units": [
+        "Intel i5"
+      ],
+      "memory": "16GB DDR4",
+      "storage": "512GB SSD",
+      "features": [
+        "Secure Boot"
+      ]
+    }
+  },
+  {
+    "input": "What is the total cost of a Cloud Backup Appliance with 1TB HDD and Basic Encryption?",
+    "output": {
+      "product": "Cloud Backup Appliance",
+      "package": "Entry",
+      "compute_units": [
+        "1"
+      ],
+      "memory": "8GB",
+      "storage": "1TB HDD",
+      "features": [
+        "Basic Encryption"
+      ]
+    }
+  },
+  {
+    "input": "I need a container orchestration platform with Kubernetes and Prometheus Monitoring",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "2",
+        "4"
+      ],
+      "memory": "16 GB",
+      "storage": "500 GB",
+      "features": [
+        "Kubernetes",
+        "Prometheus Monitoring"
+      ]
+    }
+  },
+  {
+    "input": "What is the price of a container orchestration platform with Kubernetes and Prometheus Monitoring?",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "16GB",
+      "storage": "500GB",
+      "features": [
+        "Kubernetes"
+      ]
+    }
+  },
+  {
+    "input": "I need a server with high performance and low cost. I want to use NVIDIA GPU for inference, but I also want to save some money on the GPU model.",
+    "output": {
+      "product": "AI Inference Server",
+      "package": "Lite",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A10"
+      ],
+      "memory": "16 GB",
+      "storage": "256 GB SSD",
+      "features": [
+        "High Performance",
+        "Low Cost"
+      ]
+    }
+  },
+  {
+    "input": "I want a virtual desktop infrastructure with office package and GPU acceleration feature",
+    "output": {
+      "product": "Virtual Desktop Infrastructure",
+      "package": "Office",
+      "compute_units": [
+        "Windows 11 VM"
+      ],
+      "memory": "N/A",
+      "storage": "N/A",
+      "features": [
+        "Windows 11 VM",
+        "GPU Acceleration"
+      ]
+    }
+  },
+  {
+    "input": "I need a database service with automated backups and sharding",
+    "output": {
+      "product": "Database-as-a-Service",
+      "package": "MongoDB",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "8GB",
+      "storage": "100GB",
+      "features": [
+        "Automated Backups",
+        "Sharding"
+      ]
+    }
+  },
+  {
+    "input": "I need a network firewall appliance with IP filtering and deep packet inspection",
+    "output": {
+      "product": "Network Firewall Appliance",
+      "package": "Advanced",
+      "compute_units": [
+        "1",
+        "2",
+        "3"
+      ],
+      "memory": "8GB",
+      "storage": "256GB SSD",
+      "features": [
+        "IP Filtering",
+        "Deep Packet Inspection"
+      ]
+    }
+  },
+  {
+    "input": "I need a Cloud Monitoring System with the Pro package, and I want to add Anomaly Detection as a feature. Can you give me the total cost?",
+    "output": {
+      "product": "Cloud Monitoring System",
+      "package": "Pro",
+      "compute_units": [
+        "2",
+        "4"
+      ],
+      "memory": "8GB",
+      "storage": "100GB",
+      "features": [
+        "Metrics Dashboard",
+        "Anomaly Detection"
+      ]
+    }
+  },
+  {
+    "input": "I need a Data Science Workbench with a package that has a GPU and 128GB DDR5 memory, and a storage option of 2TB NVMe RAID. I also want to add the 'Service Mesh Integration' feature.",
+    "output": {
+      "product": "Data Science Workbench",
+      "package": "Researcher",
+      "compute_units": [
+        "GPU",
+        "CPU"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "2TB NVMe RAID",
+      "features": [
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "I need a Security Audit Appliance with Threat Monitor and Compliance Shield packages, 128GB DDR5 memory, 4TB NVMe RAID storage, Prometheus Monitoring, RBAC and SSO features",
+    "output": {
+      "product": "Security Audit Appliance",
+      "package": "Compliance Shield",
+      "compute_units": [
+        "CPU:Intel Xeon Gold 6338"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Prometheus Monitoring",
+        "RBAC and SSO"
+      ]
+    }
+  },
+  {
+    "input": "I want to purchase a system with 128GB DDR5 memory and NVIDIA H100 GPU. Can you suggest the best configuration for me?",
+    "output": {
+      "product": "System Telemetry Monitor",
+      "package": "Core Metrics",
+      "compute_units": [
+        "CPU:Intel Xeon Platinum 8358",
+        "GPU:NVIDIA H100"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "1TB SSD",
+      "features": [
+        "Dedicated Support Line",
+        "AI Model Serving"
+      ]
+    }
+  },
+  {
+    "input": "I am looking to purchase a Model Training Unit with a balance between performance and cost. I want the unit to have at least one GPU, 64GB DDR4 memory, and a 2TB NVMe storage. Can you recommend a package that includes AI Model Serving and Service Mesh Integration?",
+    "output": {
+      "product": "Model Training Unit",
+      "package": "TrainLite",
+      "compute_units": [
+        "GPU",
+        "CPU"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "AI Model Serving",
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "I want to buy an Inference Workstation with the Edge Predictor package, 8TB NVMe storage, and Secure Boot feature.",
+    "output": {
+      "product": "Inference Workstation",
+      "package": "Edge Predictor",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "8TB NVMe",
+      "features": [
+        "Secure Boot"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking for a workflow accelerator with high performance, dedicated support line and AI model serving",
+    "output": {
+      "product": "Workflow Accelerator",
+      "package": "Pipeline Booster",
+      "compute_units": [
+        "CPU Intel Xeon Gold 6338"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "8TB NVMe RAID",
+      "features": [
+        "AI Model Serving",
+        "Dedicated Support Line",
+        "RBAC and SSO"
+      ]
+    }
+  },
+  {
+    "input": "I want to buy an AutoML Workstation with the best configuration for machine learning tasks.",
+    "output": {
+      "product": "AutoML Workstation",
+      "package": "HyperParam Pro",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Metrics Dashboard",
+        "Dedicated Support Line",
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "I want to buy a Backup Automation Engine with AutoSafe package and 32GB DDR4 memory, and 2TB NVMe storage. I also need Log Compression feature.",
+    "output": {
+      "product": "Backup Automation Engine",
+      "package": "AutoSafe",
+      "compute_units": [],
+      "memory": "32GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "Log Compression"
+      ]
+    }
+  },
+  {
+    "input": "I want to buy a Log Analysis Console with 64GB DDR4 memory, 1TB NVMe storage and PatternScope package",
+    "output": {
+      "product": "Log Analysis Console",
+      "package": "PatternScope",
+      "compute_units": [],
+      "memory": "64GB DDR4",
+      "storage": "1TB NVMe",
+      "features": []
+    }
+  },
+  {
+    "input": "I am looking for a product that includes the SignalMerge package, 2TB NVMe storage, and multi-source aggregation feature.",
+    "output": {
+      "product": "Event Correlation Hub",
+      "package": "SignalMerge",
+      "compute_units": [],
+      "memory": "",
+      "storage": "2TB NVMe",
+      "features": [
+        "Multi-Source Aggregation"
+      ]
+    }
+  },
+  {
+    "input": "I need a data archiver with cold vault package, 64GB DDR5 memory and 1TB SSD storage",
+    "output": {
+      "product": "Data Archiver",
+      "package": "ColdVault",
+      "compute_units": [],
+      "memory": "64GB DDR5",
+      "storage": "1TB SSD",
+      "features": []
+    }
+  },
+  {
+    "input": "I need a Data Lake Interface with 16GB DDR4 memory, 1TB SSD storage and User Session Persistence feature",
+    "output": {
+      "product": "Data Lake Interface",
+      "package": "LakeView",
+      "compute_units": [],
+      "memory": "16GB DDR4",
+      "storage": "1TB SSD",
+      "features": []
+    }
+  },
+  {
+    "input": "I need a product with interactive visualization and 64GB DDR5 memory, and I want to choose the package that includes both CPU and GPU options.",
+    "output": {
+      "product": "Elastic Query Engine",
+      "package": "QueryDash",
+      "compute_units": [
+        "CPU - AMD EPYC 7402P",
+        "GPU - NVIDIA T4"
+      ],
+      "memory": "64GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Interactive Visualization",
+        "Audit Logging"
+      ]
+    }
+  },
+  {
+    "input": "I want a product with 64GB DDR5 memory, 2TB NVMe storage and Intel Xeon E5-2650 CPU",
+    "output": {
+      "product": "Virtual Lab Suite",
+      "package": "LabBasic",
+      "compute_units": [
+        "Intel Xeon E5-2650"
+      ],
+      "memory": "64GB DDR5",
+      "storage": "2TB NVMe",
+      "features": []
+    }
+  },
+  {
+    "input": "I am looking for a product with 4TB NVMe storage, 256GB DDR5 memory and GPU compute unit.",
+    "output": {
+      "product": "Federated Learning Hub",
+      "package": "NodeBridge",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "4TB NVMe",
+      "features": [
+        "Differential Privacy",
+        "Multi-Zone Load Sensing"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration that includes 64GB DDR4 memory, NVIDIA A10 GPU, and 2TB NVMe storage?",
+    "output": {
+      "product": "Synthetic Data Generator",
+      "package": "GenForge",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A10"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": []
+    }
+  },
+  {
+    "input": "I need a product with 64GB DDR4, 2TB NVMe storage and the 'ModelSafe' package",
+    "output": {
+      "product": "InferLink",
+      "package": "ModelSafe",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "Deployment Policy Engine"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a high-performance cluster with at least 2 GPU options, 256GB DDR4 RAM, and 1TB SSD storage. I also want to include InfiniBand Networking and Remote Management Module.",
+    "output": {
+      "product": "High-Performance Compute Cluster",
+      "package": "Standard",
+      "compute_units": [
+        "NVIDIA A100",
+        "NVIDIA H100"
+      ],
+      "memory": "256GB DDR4",
+      "storage": "1TB SSD",
+      "features": [
+        "InfiniBand Networking",
+        "Remote Management Module"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking for a workstation with 64GB DDR5, NVIDIA RTX A6000 GPU and 2TB NVMe storage",
+    "output": {
+      "product": "AI Training Workstation",
+      "package": "Developer",
+      "compute_units": [
+        "GPU",
+        "NVIDIA RTX A6000"
+      ],
+      "memory": "64GB DDR5",
+      "storage": "2TB NVMe",
+      "features": []
+    }
+  },
+  {
+    "input": "I want a cloud backup appliance with 10TB SSD RAID and basic encryption",
+    "output": {
+      "product": "Cloud Backup Appliance",
+      "package": "Enterprise",
+      "compute_units": [
+        "compute_units_1",
+        "compute_units_2"
+      ],
+      "memory": "16GB",
+      "storage": "10TB SSD RAID",
+      "features": [
+        "Basic Encryption"
+      ]
+    }
+  },
+  {
+    "input": "I want a container orchestration platform with Kubernetes and Prometheus Monitoring",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "8GB",
+      "storage": "100GB",
+      "features": [
+        "Kubernetes",
+        "Prometheus Monitoring"
+      ]
+    }
+  },
+  {
+    "input": "I want to purchase a container orchestration platform with Kubernetes and Prometheus Monitoring, please",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "16GB",
+      "storage": "256GB",
+      "features": [
+        "Kubernetes"
+      ]
+    }
+  },
+  {
+    "input": "I need a server with high performance and low cost",
+    "output": {
+      "product": "AI Inference Server",
+      "package": "Lite",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A10"
+      ],
+      "memory": "16 GB",
+      "storage": "256 GB SSD",
+      "features": [
+        "Low latency",
+        "High throughput"
+      ]
+    }
+  },
+  {
+    "input": "I want a virtual desktop infrastructure with office package and GPU acceleration",
+    "output": {
+      "product": "Virtual Desktop Infrastructure",
+      "package": "Developer",
+      "compute_units": [
+        "2",
+        "4"
+      ],
+      "memory": "16GB",
+      "storage": "500GB",
+      "features": [
+        "Windows 11 VM",
+        "GPU Acceleration"
+      ]
+    }
+  },
+  {
+    "input": "I need a database service that includes automated backups and sharding",
+    "output": {
+      "product": "Database-as-a-Service",
+      "package": "PostgreSQL",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "4GB",
+      "storage": "50GB",
+      "features": [
+        "Automated Backups",
+        "Sharding"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking to purchase a network firewall appliance with IP filtering and deep packet inspection. Can you recommend the best configuration for me?",
+    "output": {
+      "product": "Network Firewall Appliance",
+      "package": "Basic",
+      "compute_units": [
+        "Intel Xeon",
+        "NVIDIA GPU"
+      ],
+      "memory": "16 GB DDR4 RAM",
+      "storage": "1 TB SSD Storage",
+      "features": [
+        "IP Filtering",
+        "Deep Packet Inspection"
+      ]
+    }
+  },
+  {
+    "input": "I need a VPN Gateway with remote access and site-to-site connectivity",
+    "output": {
+      "product": "Enterprise VPN Gateway",
+      "package": "Remote Access",
+      "compute_units": [
+        "2x4",
+        "2x8"
+      ],
+      "memory": "16GB",
+      "storage": "500GB",
+      "features": [
+        "Split Tunneling",
+        "IPSec Tunnels"
+      ]
+    }
+  },
+  {
+    "input": "I need a cloud monitoring system with anomaly detection and metrics dashboard.",
+    "output": {
+      "product": "Cloud Monitoring System",
+      "package": "Pro",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "16GB",
+      "storage": "100GB",
+      "features": [
+        "Metrics Dashboard",
+        "Anomaly Detection"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking for a model training unit with 8TB NVMe storage and AI Model Serving feature",
+    "output": {
+      "product": "Model Training Unit",
+      "package": "TrainMax AI",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "8TB NVMe",
+      "features": [
+        "AI Model Serving",
+        "Service Mesh Integration",
+        "Secure Boot"
+      ]
+    }
+  },
+  {
+    "input": "I need a product with an Edge Predictor, NVIDIA A100 GPU, 256GB DDR5 memory and 8TB NVMe storage",
+    "output": {
+      "product": "Inference Workstation",
+      "package": "Edge Predictor",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "8TB NVMe",
+      "features": [
+        "Secure Boot",
+        "Dedicated Support Line"
+      ]
+    }
+  },
+  {
+    "input": "I need a Workflow Accelerator with 8TB NVMe storage, 128GB DDR5 memory and AI Model Serving feature",
+    "output": {
+      "product": "Workflow Accelerator",
+      "package": "FlowStart",
+      "compute_units": [
+        "CPU Intel Xeon Platinum 8358"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "8TB NVMe",
+      "features": [
+        "AI Model Serving"
+      ]
+    }
+  },
+  {
+    "input": "I want a workstation with good performance, lots of storage and a GPU",
+    "output": {
+      "product": "AutoML Workstation",
+      "package": "HyperParam Pro",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Metrics Dashboard",
+        "Dedicated Support Line"
+      ]
+    }
+  },
+  {
+    "input": "What is the total price of a GPU Compute Rack with 512GB DDR5 memory, 4TB NVMe RAID storage, and Parallel Pack?",
+    "output": {
+      "product": "GPU Compute Rack",
+      "package": "Parallel Pack",
+      "compute_units": [
+        "GPU",
+        "NVIDIA H100"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Dedicated Support Line"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration for a StudioCore with 512GB DDR5 memory and 8TB NVMe storage?",
+    "output": {
+      "product": "StudioCore",
+      "package": "RenderLite",
+      "compute_units": [],
+      "memory": "512GB DDR5",
+      "storage": "8TB NVMe",
+      "features": []
+    }
+  },
+  {
+    "input": "I want to purchase a product with 64GB DDR4 memory, 512GB SSD storage and the AutoSafe package",
+    "output": {
+      "product": "Backup Automation Engine",
+      "package": "AutoSafe",
+      "compute_units": [
+        "AMD EPYC 7313"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "512GB SSD",
+      "features": [
+        "Log Compression"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking for a product with encryption at rest, 128GB DDR5 memory, and 512GB SSD storage.",
+    "output": {
+      "product": "ML Research Pod",
+      "package": "LabSeed",
+      "compute_units": [],
+      "memory": "128GB DDR5",
+      "storage": "512GB SSD",
+      "features": [
+        "Encryption at Rest"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a product with 64GB DDR4 memory, 512GB SSD storage, and an NVIDIA A10 GPU. Can you give me the best package option?",
+    "output": {
+      "product": "AI Optimization Platform",
+      "package": "OptiCore",
+      "compute_units": [
+        "NVIDIA A10"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "512GB SSD",
+      "features": []
+    }
+  },
+  {
+    "input": "I want to purchase a Log Analysis Console with 128GB DDR5 RAM, 2TB NVMe Storage and PatternScope package",
+    "output": {
+      "product": "Log Analysis Console",
+      "package": "PatternScope",
+      "compute_units": [],
+      "memory": "128GB DDR5",
+      "storage": "2TB NVMe",
+      "features": []
+    }
+  },
+  {
+    "input": "I need a Data Lake Interface with 16GB DDR4, 1TB SSD and User Session Persistence",
+    "output": {
+      "product": "QuerySurface",
+      "package": "LakeView",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "16GB DDR4",
+      "storage": "1TB SSD",
+      "features": [
+        "Audit Logging"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a Virtual Lab Suite with the most advanced configuration. Can you recommend one?",
+    "output": {
+      "product": "Virtual Lab Suite",
+      "package": "LabEnterprise",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "32GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "Advanced configuration",
+        "High-performance computing"
+      ]
+    }
+  },
+  {
+    "input": "I want to purchase a product with 512GB DDR5 memory, 4TB NVMe storage and Differential Privacy feature. I also need 2 GPUs with NVIDIA L40S model.",
+    "output": {
+      "product": "Federated Learning Hub",
+      "package": "NodeBridge",
+      "compute_units": [
+        "GPU",
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe",
+      "features": [
+        "Differential Privacy"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a Quantum Simulation Node with 8TB SSD RAID, NVIDIA A100 GPU and 256GB DDR5 memory",
+    "output": {
+      "product": "QuantumStack",
+      "package": "EntangleX",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "8TB SSD RAID",
+      "features": [
+        "Federated Aggregation"
+      ]
+    }
+  },
+  {
+    "input": "I need a high throughput data router with 256GB DDR5 memory, 4TB SSD RAID storage and Intel Xeon 4314 CPU",
+    "output": {
+      "product": "High-Throughput Data Router",
+      "package": "DataPulse",
+      "compute_units": [
+        "Intel Xeon 4314"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "4TB SSD RAID",
+      "features": []
+    }
+  },
+  {
+    "input": "I am looking for a product that includes the 'ModelSafe' package with 64GB DDR4 memory, 4TB SSD RAID storage, and Load Isolation feature.",
+    "output": {
+      "product": "Secure Model Deployment Gateway",
+      "package": "InferLink",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Deployment Policy Engine"
+      ]
+    }
+  },
+  {
+    "input": "I need a Edge Computing Gateway with high performance, secure boot and edge AI accelerator for my business. Can you provide me the best package configuration?",
+    "output": {
+      "product": "Edge Computing Gateway",
+      "package": "Advanced",
+      "compute_units": [
+        "Intel Xeon D-2146NT"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "Edge AI Accelerator"
+      ]
+    }
+  },
+  {
+    "input": "I need a cloud backup appliance with 10TB SSD RAID, end-to-end encryption and automated snapshot scheduling",
+    "output": {
+      "product": "Cloud Backup Appliance",
+      "package": "Enterprise",
+      "compute_units": [],
+      "memory": "",
+      "storage": "10TB SSD RAID",
+      "features": [
+        "End-to-End Encryption",
+        "Automated Snapshot Scheduling"
+      ]
+    }
+  },
+  {
+    "input": "I need a container orchestration platform with Kubernetes and Prometheus Monitoring",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "16GB",
+      "storage": "100GB",
+      "features": [
+        "Kubernetes",
+        "Prometheus Monitoring"
+      ]
+    }
+  },
+  {
+    "input": "I need a virtual desktop infrastructure with office package and VPN access",
+    "output": {
+      "product": "Virtual Desktop Infrastructure",
+      "package": "Office",
+      "compute_units": [
+        "Windows 11 VM"
+      ],
+      "memory": "Standard Memory",
+      "storage": "Standard Storage",
+      "features": [
+        "VPN Access"
+      ]
+    }
+  },
+  {
+    "input": "I need a network firewall appliance with IP filtering and deep packet inspection for my organization.",
+    "output": {
+      "product": "Network Firewall Appliance",
+      "package": "Advanced",
+      "compute_units": [
+        "4",
+        "8"
+      ],
+      "memory": "16 GB",
+      "storage": "1 TB SSD",
+      "features": [
+        "IP Filtering",
+        "Deep Packet Inspection"
+      ]
+    }
+  },
+  {
+    "input": "I need a VPN Gateway with Remote Access and Site-to-Site capabilities.",
+    "output": {
+      "product": "Enterprise VPN Gateway",
+      "package": "Remote Access + Site-to-Site",
+      "compute_units": [
+        "2 vCPUs",
+        "4 vCPUs"
+      ],
+      "memory": "16 GB RAM",
+      "storage": "1000 GB SSD",
+      "features": [
+        "Split Tunneling",
+        "IPSec Tunnels"
+      ]
+    }
+  },
+  {
+    "input": "I need a cloud monitoring system with anomaly detection and metrics dashboard",
+    "output": {
+      "product": "Cloud Monitoring System",
+      "package": "Pro",
+      "compute_units": [
+        "1",
+        "2",
+        "3"
+      ],
+      "memory": "16 GB",
+      "storage": "1000 GB",
+      "features": [
+        "Anomaly Detection",
+        "Metrics Dashboard"
+      ]
+    }
+  },
+  {
+    "input": "I need a data science workbench with AI model serving, service mesh integration and secure boot. Can I get a package that includes 64GB DDR4 memory and 2TB NVMe storage?",
+    "output": {
+      "product": "Data Science Workbench",
+      "package": "Researcher",
+      "compute_units": [
+        "CPU: Intel Xeon Gold 6338",
+        "GPU: NVIDIA RTX 6000 Ada"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "AI Model Serving",
+        "Service Mesh Integration",
+        "Secure Boot"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a Visualization Server with 8 GPU, 256GB DDR5 RAM and 4TB NVMe RAID Storage?",
+    "output": {
+      "product": "Visualization Server",
+      "package": "GraphCore",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A100"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Dedicated Support Line",
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a security audit appliance with threat monitoring, compliance shield and auditx enterprise features",
+    "output": {
+      "product": "Security Audit Appliance",
+      "package": "AuditX Enterprise",
+      "compute_units": [
+        "CPU: Intel Xeon Platinum 8358",
+        "GPU: NVIDIA RTX 6000 Ada"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "1TB SSD",
+      "features": [
+        "Prometheus Monitoring",
+        "Metrics Dashboard",
+        "AI Model Serving"
+      ]
+    }
+  },
+  {
+    "input": "I want a system with high performance and dedicated support line",
+    "output": {
+      "product": "System Telemetry Monitor",
+      "package": "Performance Pulse",
+      "compute_units": [
+        "CPU:Intel Xeon Platinum 8358",
+        "GPU:NVIDIA H100"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Dedicated Support Line",
+        "AI Model Serving",
+        "Kubernetes Support"
+      ]
+    }
+  },
+  {
+    "input": "What is the optimal configuration for Workflow Accelerator with AI Model Serving and dedicated support line?",
+    "output": {
+      "product": "Workflow Accelerator",
+      "package": "Pipeline Booster",
+      "compute_units": [
+        "Intel Xeon Gold 6338"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "AI Model Serving",
+        "Dedicated Support Line",
+        "RBAC and SSO"
+      ]
+    }
+  },
+  {
+    "input": "I need a workstation with good performance and lots of storage. I want to use the GPU for training models.",
+    "output": {
+      "product": "AutoML Workstation",
+      "package": "HyperParam Pro",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Metrics Dashboard",
+        "Dedicated Support Line",
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration for AutoSafe package with 64GB DDR4 memory and 2TB NVMe storage?",
+    "output": {
+      "product": "Backup Automation Engine",
+      "package": "AutoSafe",
+      "compute_units": [
+        "AMD EPYC 7313"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "Log Compression"
+      ]
+    }
+  },
+  {
+    "input": "I need a distributed cache node with high performance and 128GB DDR5 memory.",
+    "output": {
+      "product": "Distributed Cache Node",
+      "package": "CacheBurst",
+      "compute_units": [
+        "CPU: AMD EPYC 7313",
+        "GPU: NVIDIA T4"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "",
+      "features": [
+        "High Performance",
+        "128GB DDR5 Memory"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for an AI Optimization Platform with 128GB DDR5 RAM, 1TB NVMe Storage and Encryption at Rest feature?",
+    "output": {
+      "product": "AI Optimization Platform",
+      "package": "AutoSmart",
+      "compute_units": [],
+      "memory": "128GB DDR5",
+      "storage": "1TB NVMe",
+      "features": [
+        "Encryption at Rest"
+      ]
+    }
+  },
+  {
+    "input": "I need a configuration that supports multi-source aggregation and has the best GPU for incident IQ, with 2TB NVMe storage.",
+    "output": {
+      "product": "Event Correlation Hub",
+      "package": "IncidentIQ",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "",
+      "storage": "2TB NVMe",
+      "features": [
+        "Multi-Source Aggregation"
+      ]
+    }
+  },
+  {
+    "input": "I need a simple query engine with good visualization and auditing capabilities, but I don't want to spend too much on storage. What is the best package for me?",
+    "output": {
+      "product": "Elastic Query Engine",
+      "package": "QueryDash",
+      "compute_units": [
+        "CPU:AMD EPYC 7402P",
+        "GPU:NVIDIA T4"
+      ],
+      "memory": "32GB DDR4",
+      "storage": "512GB SSD",
+      "features": [
+        "Interactive Visualization",
+        "Audit Logging"
+      ]
+    }
+  },
+  {
+    "input": "I am looking to purchase a Federated Learning Hub with a balance between performance and cost. Can you recommend the best package for me?",
+    "output": {
+      "product": "Federated Learning Hub",
+      "package": "NodeBridge",
+      "compute_units": [
+        "GPU",
+        "NVIDIA L40S"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe",
+      "features": [
+        "Differential Privacy",
+        "Multi-Zone Load Sensing"
+      ]
+    }
+  },
+  {
+    "input": "I want to buy a Zero Trust Access Controller with the best configuration for my needs. I need it to be secure, have good performance and enough memory.",
+    "output": {
+      "product": "Zero Trust Access Controller",
+      "package": "ZTX Guardian",
+      "compute_units": [
+        "CPU: AMD EPYC Milan",
+        "GPU: NVIDIA A100"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "8TB SSD RAID",
+      "features": [
+        "Differential Privacy",
+        "Bias Mitigation Module"
+      ]
+    }
+  },
+  {
+    "input": "I need a configuration that can handle large datasets and has the ability to detect anomalies, with 512GB DDR5 memory and 2TB NVMe storage.",
+    "output": {
+      "product": "AI Ethics Compliance Engine",
+      "package": "FairAudit",
+      "compute_units": [
+        "GPU",
+        "NVIDIA L40S"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Anomaly Flagging",
+        "Quantum Emulation Mode"
+      ]
+    }
+  },
+  {
+    "input": "I need a synthetic data generator with high performance and 128GB DDR5 memory, and I want to use the NVIDIA A10 GPU. Can you provide me with an option that includes anonymized data output and load isolation?",
+    "output": {
+      "product": "Synthetic Data Generator",
+      "package": "DataSynth Pro",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A10"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Anonymized Data Output",
+        "Load Isolation"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration for a High-Throughput Data Router with 128GB DDR5 memory and 4TB SSD RAID storage?",
+    "output": {
+      "product": "High-Throughput Data Router",
+      "package": "RouteXpress",
+      "compute_units": [
+        "CPU:Intel Xeon 4314",
+        "GPU:NVIDIA A10"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Access Logging"
+      ]
+    }
+  },
+  {
+    "input": "I need a secure model deployment gateway with 64GB DDR4 RAM, 4TB SSD RAID storage and real-time stream control feature.",
+    "output": {
+      "product": "Secure Model Deployment Gateway",
+      "package": "ModelSafe",
+      "compute_units": [],
+      "memory": "64GB DDR4",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Real-time Stream Control"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration for a High-Performance Compute Cluster with 128GB DDR4 memory, NVIDIA A100 GPU, and InfiniBand Networking?",
+    "output": {
+      "product": "High-Performance Compute Cluster",
+      "package": "Standard",
+      "compute_units": [
+        "CPU:Intel Xeon Gold 6248",
+        "GPU:NVIDIA A100"
+      ],
+      "memory": "128GB DDR4",
+      "storage": "1TB SSD",
+      "features": [
+        "InfiniBand Networking"
+      ]
+    }
+  },
+  {
+    "input": "I need a basic edge computing gateway with 16GB DDR4 RAM, 512GB SSD storage and secure boot feature",
+    "output": {
+      "product": "Edge Computing Gateway",
+      "package": "Basic",
+      "compute_units": [
+        "Intel i5"
+      ],
+      "memory": "16GB DDR4",
+      "storage": "512GB SSD",
+      "features": [
+        "Secure Boot"
+      ]
+    }
+  },
+  {
+    "input": "I need a container orchestration platform with Kubernetes and Prometheus Monitoring for monitoring, but I don't want to spend more than $10,000. Can you suggest the best package?",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "4GB",
+      "storage": "50GB",
+      "features": [
+        "Kubernetes",
+        "Prometheus Monitoring"
+      ]
+    }
+  },
+  {
+    "input": "I need a server with AI inference capabilities and high performance. Can I get the full package with NVIDIA A100 GPU?",
+    "output": {
+      "product": "AI Inference Server",
+      "package": "Full",
+      "compute_units": [
+        "NVIDIA A100"
+      ],
+      "memory": "16GB",
+      "storage": "256GB SSD",
+      "features": [
+        "High-performance AI inference",
+        "Advanced data analytics"
+      ]
+    }
+  },
+  {
+    "input": "I need a network firewall appliance with IP filtering and deep packet inspection for my organization.",
+    "output": {
+      "product": "Network Firewall Appliance",
+      "package": "Advanced",
+      "compute_units": [
+        "1 x CPU"
+      ],
+      "memory": "16 GB RAM",
+      "storage": "500 GB SSD",
+      "features": [
+        "IP Filtering",
+        "Deep Packet Inspection"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a Cloud Monitoring System that includes anomaly detection and metrics dashboard?",
+    "output": {
+      "product": "Cloud Monitoring System",
+      "package": "Pro",
+      "compute_units": [
+        "High Performance"
+      ],
+      "memory": "16 GB RAM",
+      "storage": "1000 GB SSD",
+      "features": [
+        "Metrics Dashboard",
+        "Anomaly Detection"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a Security Audit Appliance with Threat Monitor and Compliance Shield packages, and 128GB DDR5 memory and 4TB NVMe RAID storage?",
+    "output": {
+      "product": "Security Audit Appliance",
+      "package": "Threat Monitor,Compliance Shield",
+      "compute_units": [
+        "CPU:Intel Xeon Platinum 8358",
+        "GPU:NVIDIA H100"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Metrics Dashboard",
+        "Prometheus Monitoring",
+        "RBAC and SSO",
+        "Kubernetes Support"
+      ]
+    }
+  },
+  {
+    "input": "I need a product that can handle batch inference and has real-time inferencing capabilities, with 64GB DDR4 memory and 2TB NVMe storage.",
+    "output": {
+      "product": "Inference Workstation",
+      "package": "Batch Inference Engine",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A100"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "RBAC and SSO"
+      ]
+    }
+  },
+  {
+    "input": "I need a workflow accelerator with AI Model Serving, Dedicated Support Line and 8TB NVMe storage",
+    "output": {
+      "product": "Workflow Accelerator",
+      "package": "Pipeline Booster",
+      "compute_units": [
+        "Intel Xeon Gold 6338"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "8TB NVMe",
+      "features": [
+        "AI Model Serving",
+        "Dedicated Support Line",
+        "RBAC and SSO"
+      ]
+    }
+  },
+  {
+    "input": "I need a workstation with high performance, large memory and storage for machine learning tasks. I want to use GPU for training and have dedicated support line.",
+    "output": {
+      "product": "AutoML Workstation",
+      "package": "HyperParam Pro",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID",
+      "features": [
+        "Dedicated Support Line",
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration for a Distributed Cache Node with high performance and large storage?",
+    "output": {
+      "product": "Distributed Cache Node",
+      "package": "CacheStream",
+      "compute_units": [
+        "CPU - AMD EPYC 7313",
+        "GPU - NVIDIA T4"
+      ],
+      "memory": "32GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "High performance",
+        "Large storage"
+      ]
+    }
+  },
+  {
+    "input": "I need a machine with good encryption, 128GB DDR5 RAM and 512GB SSD storage",
+    "output": {
+      "product": "ML Research Pod",
+      "package": "LabSeed",
+      "compute_units": [],
+      "memory": "128GB DDR5",
+      "storage": "512GB SSD",
+      "features": [
+        "Encryption at Rest"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking to purchase a Streaming Ingestion Agent with a balance between performance and cost. I need something that can handle a moderate amount of data, but still be affordable.",
+    "output": {
+      "product": "Streaming Ingestion Agent",
+      "package": "FlowIngest",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "1TB NVMe",
+      "features": [
+        "Encryption at Rest"
+      ]
+    }
+  },
+  {
+    "input": "I need a product that can perform fair audit and bias checking, with 512GB DDR5 memory, 2TB NVMe storage, and Anomaly Flagging feature.",
+    "output": {
+      "product": "AI Ethics Compliance Engine",
+      "package": "FairAudit",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Anomaly Flagging"
+      ]
+    }
+  },
+  {
+    "input": "I want to buy an Intelligent Load Balancer with a good balance between performance and price. I need at least 512GB of memory, 4TB of storage, and the SmartFlow package.",
+    "output": {
+      "product": "Intelligent Load Balancer",
+      "package": "SmartFlow",
+      "compute_units": [
+        "CPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe",
+      "features": [
+        "Quantum Emulation Mode",
+        "Bias Mitigation Module"
+      ]
+    }
+  },
+  {
+    "input": "I'm looking for a digital twin builder with high performance and ample storage. Can I get the best configuration that suits my needs?",
+    "output": {
+      "product": "Digital Twin Builder",
+      "package": "ReplicaMax",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Anonymized Data Output"
+      ]
+    }
+  },
+  {
+    "input": "I need a high-throughput data router with the best configuration for my business.",
+    "output": {
+      "product": "High-Throughput Data Router",
+      "package": "DataPulse",
+      "compute_units": [
+        "Intel Xeon 4314",
+        "NVIDIA A10"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Access Logging"
+      ]
+    }
+  },
+  {
+    "input": "I need a product with high security, real-time stream control and 64GB DDR4 memory.",
+    "output": {
+      "product": "Secure Model Deployment Gateway",
+      "package": "ModelSafe",
+      "compute_units": [],
+      "memory": "64GB DDR4",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Load Isolation",
+        "Real-time Stream Control"
+      ]
+    }
+  },
+  {
+    "input": "I need a basic edge computing gateway with 16GB DDR4 RAM, 512GB SSD storage and secure boot feature",
+    "output": {
+      "product": "Edge Computing Gateway",
+      "package": "Basic",
+      "compute_units": [
+        "CPU Intel i5"
+      ],
+      "memory": "16GB DDR4",
+      "storage": "512GB SSD",
+      "features": [
+        "Secure Boot"
+      ]
+    }
+  },
+  {
+    "input": "I need a container orchestration platform with Kubernetes and Prometheus Monitoring",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2",
+        "3"
+      ],
+      "memory": "16 GB",
+      "storage": "1000 GB",
+      "features": [
+        "Kubernetes",
+        "Prometheus Monitoring"
+      ]
+    }
+  },
+  {
+    "input": "Can I get the Container Orchestration Platform with Kubernetes and Prometheus Monitoring?",
+    "output": {
+      "product": "Container Orchestration Platform",
+      "package": "Standard",
+      "compute_units": [
+        "1",
+        "2"
+      ],
+      "memory": "16GB",
+      "storage": "100GB",
+      "features": [
+        "Kubernetes"
+      ]
+    }
+  },
+  {
+    "input": "I need a product that can handle AI inference tasks with high performance and has a reasonable price. I want to know the best configuration for this product.",
+    "output": {
+      "product": "AI Inference Server",
+      "package": "Full",
+      "compute_units": [
+        "NVIDIA A100"
+      ],
+      "memory": "16 GB",
+      "storage": "256 GB SSD",
+      "features": [
+        "High-performance AI inference",
+        "Reasonable price"
+      ]
+    }
+  },
+  {
+    "input": "I want to purchase a Virtual Desktop Infrastructure with Office package and VPN Access feature.",
+    "output": {
+      "product": "Virtual Desktop Infrastructure",
+      "package": "Office",
+      "compute_units": [
+        "Windows 11 VM"
+      ],
+      "memory": "Standard Memory",
+      "storage": "Standard Storage",
+      "features": [
+        "VPN Access"
+      ]
+    }
+  },
+  {
+    "input": "I want to purchase a virtual desktop infrastructure with Windows 11 VM and VPN Access.",
+    "output": {
+      "product": "Virtual Desktop Infrastructure",
+      "package": "Developer",
+      "compute_units": [
+        "GPU Acceleration"
+      ],
+      "memory": "16 GB",
+      "storage": "500 GB",
+      "features": [
+        "Windows 11 VM",
+        "VPN Access"
+      ]
+    }
+  },
+  {
+    "input": "I need a database service with automated backups and sharding",
+    "output": {
+      "product": "Database-as-a-Service",
+      "package": "MongoDB",
+      "compute_units": [
+        "4vCPUs"
+      ],
+      "memory": "16GB RAM",
+      "storage": "1000GB Storage",
+      "features": [
+        "Automated Backups",
+        "Sharding"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration of a basic Network Firewall Appliance with IP filtering and threat intelligence feed?",
+    "output": {
+      "product": "Network Firewall Appliance",
+      "package": "Basic",
+      "compute_units": [
+        "1"
+      ],
+      "memory": "4GB",
+      "storage": "100GB",
+      "features": [
+        "IP Filtering",
+        "Threat Intelligence Feed"
+      ]
+    }
+  },
+  {
+    "input": "I need a VPN Gateway with remote access and site-to-site connectivity",
+    "output": {
+      "product": "Enterprise VPN Gateway",
+      "package": "Remote Access + Site-to-Site",
+      "compute_units": [
+        "2",
+        "4"
+      ],
+      "memory": "16GB",
+      "storage": "500GB",
+      "features": [
+        "Split Tunneling",
+        "IPSec Tunnels"
+      ]
+    }
+  },
+  {
+    "input": "I need a cloud monitoring system with anomaly detection and metrics dashboard",
+    "output": {
+      "product": "Cloud Monitoring System",
+      "package": "Pro",
+      "compute_units": [
+        "Standard A8",
+        "Standard A8"
+      ],
+      "memory": "16 GB",
+      "storage": "500 GB",
+      "features": [
+        "Anomaly Detection",
+        "Metrics Dashboard"
+      ]
+    }
+  },
+  {
+    "input": "I need a Visualization Server with secure boot, prometheus monitoring and 8TB NVMe RAID",
+    "output": {
+      "product": "Visualization Server",
+      "package": "Insight Pro",
+      "compute_units": [
+        "CPU: AMD EPYC 7513",
+        "GPU: NVIDIA RTX 6000 Ada"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "8TB NVMe RAID",
+      "features": [
+        "Kubernetes Support",
+        "Secure Boot",
+        "Service Mesh Integration"
+      ]
+    }
+  },
+  {
+    "input": "I need a Security Audit Appliance with Threat Monitor, Compliance Shield and AuditX Enterprise packages. I want to add Prometheus Monitoring feature",
+    "output": {
+      "product": "Security Audit Appliance",
+      "package": "Threat Monitor,Compliance Shield,AuditX Enterprise",
+      "compute_units": [
+        "CPU:Intel Xeon Platinum 8358",
+        "GPU:NVIDIA H100",
+        "CPU:Intel Xeon Gold 6338",
+        "GPU:NVIDIA A100"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "4TB NVMe RAID,2TB NVMe",
+      "features": [
+        "Prometheus Monitoring",
+        "RBAC and SSO",
+        "Kubernetes Support"
+      ]
+    }
+  },
+  {
+    "input": "I need a system with Core Metrics and Performance Pulse, 128GB DDR5 RAM, 1TB SSD storage, Dedicated Support Line feature, and AI Model Serving feature.",
+    "output": {
+      "product": "System Telemetry Monitor",
+      "package": "Core Metrics",
+      "compute_units": [
+        "CPU:Intel Xeon Platinum 8358",
+        "GPU:NVIDIA H100"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "1TB SSD",
+      "features": [
+        "Dedicated Support Line",
+        "AI Model Serving"
+      ]
+    }
+  },
+  {
+    "input": "I need a product that includes the Edge Predictor package with 256GB DDR5 memory, 8TB NVMe storage, Secure Boot feature, and Batch Inference Engine",
+    "output": {
+      "product": "Inference Workstation",
+      "package": "Edge Predictor",
+      "compute_units": [
+        "GPU",
+        "NVIDIA A100"
+      ],
+      "memory": "256GB DDR5",
+      "storage": "8TB NVMe",
+      "features": [
+        "Secure Boot",
+        "Batch Inference Engine"
+      ]
+    }
+  },
+  {
+    "input": "What is the optimal configuration for a GPU Compute Rack with 2x NVIDIA H100 GPUs, 64GB DDR5 RAM, and 1TB SSD storage?",
+    "output": {
+      "product": "GPU Compute Rack",
+      "package": "Parallel Pack",
+      "compute_units": [
+        "NVIDIA H100"
+      ],
+      "memory": "64GB DDR5",
+      "storage": "1TB SSD",
+      "features": [
+        "Dedicated Support Line"
+      ]
+    }
+  },
+  {
+    "input": "I need a backup automation engine with log compression and redundancy plus, 32GB DDR4 memory, 2TB NVMe storage",
+    "output": {
+      "product": "Backup Automation Engine",
+      "package": "AutoSafe",
+      "compute_units": [
+        "AMD EPYC 7313"
+      ],
+      "memory": "32GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "Log Compression",
+        "RedundancyPlus"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a Distributed Cache Node with high performance and large storage?",
+    "output": {
+      "product": "Distributed Cache Node",
+      "package": "CacheStream",
+      "compute_units": [
+        "CPU: AMD EPYC 7313",
+        "GPU: NVIDIA T4"
+      ],
+      "memory": "32GB DDR4",
+      "storage": "2TB NVMe",
+      "features": [
+        "High performance",
+        "Large storage"
+      ]
+    }
+  },
+  {
+    "input": "I need a streaming ingestion agent with high performance and encryption at rest, please suggest the best configuration.",
+    "output": {
+      "product": "Streaming Ingestion Agent",
+      "package": "EventCapturer",
+      "compute_units": [
+        "CPU",
+        "GPU"
+      ],
+      "memory": "64GB DDR4",
+      "storage": "512GB SSD",
+      "features": [
+        "Encryption at Rest"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a Log Analysis Console with high performance and large storage?",
+    "output": {
+      "product": "Log Analysis Console",
+      "package": "Anomalyze",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Encryption at Rest",
+        "Load Adaptive Caching"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a product with interactive visualization and audit logging, and 64GB DDR5 memory?",
+    "output": {
+      "product": "Elastic Query Engine",
+      "package": "QueryDash",
+      "compute_units": [
+        "CPU: AMD EPYC 7402P",
+        "GPU: NVIDIA T4"
+      ],
+      "memory": "64GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Interactive Visualization",
+        "Audit Logging"
+      ]
+    }
+  },
+  {
+    "input": "What is the best configuration for a Zero Trust Access Controller with Differential Privacy and 2TB NVMe storage?",
+    "output": {
+      "product": "Zero Trust Access Controller",
+      "package": "TrustLite",
+      "compute_units": [
+        "AMD EPYC Milan CPU",
+        "NVIDIA A100 GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Differential Privacy",
+        "Bias Mitigation Module"
+      ]
+    }
+  },
+  {
+    "input": "I need a Quantum Simulation Node with high performance and ample storage. I want to prioritize Federated Aggregation feature.",
+    "output": {
+      "product": "QuantumSimulationNode",
+      "package": "EntangleX",
+      "compute_units": [
+        "GPU NVIDIA A100"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "8TB SSD RAID",
+      "features": [
+        "Federated Aggregation"
+      ]
+    }
+  },
+  {
+    "input": "What is the configuration that would be ideal for a company looking to balance their load across multiple zones while utilizing their GPU resources efficiently?",
+    "output": {
+      "product": "DemandBalancer",
+      "package": "SmartFlow",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "512GB DDR5",
+      "storage": "2TB NVMe",
+      "features": [
+        "Quantum Emulation Mode",
+        "Differential Privacy"
+      ]
+    }
+  },
+  {
+    "input": "I am looking for a digital twin builder with the best performance, 128GB DDR5 RAM, and 4TB SSD RAID storage.",
+    "output": {
+      "product": "Digital Twin Builder",
+      "package": "ReplicaMax",
+      "compute_units": [
+        "GPU"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Anonymized Data Output"
+      ]
+    }
+  },
+  {
+    "input": "I need a product with high security, real-time stream control and deployment policy engine. I also want a GPU for compute unit and 128GB DDR5 memory.",
+    "output": {
+      "product": "InferLink",
+      "package": "ModelSafe",
+      "compute_units": [
+        "GPU",
+        "NVIDIA L4"
+      ],
+      "memory": "128GB DDR5",
+      "storage": "4TB SSD RAID",
+      "features": [
+        "Real-time Stream Control",
+        "Deployment Policy Engine"
+      ]
+    }
+  }
+]

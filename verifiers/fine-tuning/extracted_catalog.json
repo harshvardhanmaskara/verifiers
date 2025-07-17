@@ -1,0 +1,329 @@
+{
+    "compute_resource_configurations": [
+        {
+            "product": "High-Performance Compute Cluster",
+            "package": [
+                "Standard",
+                "Enterprise"
+            ]
+        },
+        {
+            "product": "AI Training Workstation",
+            "package": [
+                "Developer",
+                "Advanced"
+            ]
+        },
+        {
+            "product": "Edge Computing Gateway",
+            "package": [
+                "Basic",
+                "Advanced"
+            ]
+        },
+        {
+            "product": "Cloud Backup Appliance",
+            "package": [
+                "Entry",
+                "Enterprise"
+            ]
+        },
+        {
+            "product": "Container Orchestration Platform",
+            "package": [
+                "Standard",
+                "Premium"
+            ]
+        },
+        {
+            "product": "AI Inference Server",
+            "package": [
+                "Lite",
+                "Full"
+            ]
+        },
+        {
+            "product": "Virtual Desktop Infrastructure",
+            "package": [
+                "Office",
+                "Developer"
+            ]
+        },
+        {
+            "product": "Database-as-a-Service",
+            "package": [
+                "PostgreSQL",
+                "MongoDB"
+            ]
+        },
+        {
+            "product": "Network Firewall Appliance",
+            "package": [
+                "Basic",
+                "Advanced"
+            ]
+        },
+        {
+            "product": "Enterprise VPN Gateway",
+            "package": [
+                "Remote Access",
+                "Site-to-Site"
+            ]
+        },
+        {
+            "product": "Cloud Monitoring System",
+            "package": [
+                "Essentials",
+                "Pro"
+            ]
+        },
+        {
+            "product": "Data Science Workbench",
+            "package": [
+                "Explorer",
+                "Researcher",
+                "Enterprise Lab"
+            ]
+        },
+        {
+            "product": "Visualization Server",
+            "package": [
+                "GraphCore",
+                "Insight Pro",
+                "Vision Suite"
+            ]
+        },
+        {
+            "product": "Security Audit Appliance",
+            "package": [
+                "Threat Monitor",
+                "Compliance Shield",
+                "AuditX Enterprise"
+            ]
+        },
+        {
+            "product": "System Telemetry Monitor",
+            "package": [
+                "Core Metrics",
+                "Performance Pulse",
+                "OpsVision"
+            ]
+        },
+        {
+            "product": "Model Training Unit",
+            "package": [
+                "TrainLite",
+                "TrainPro",
+                "TrainMax AI"
+            ]
+        },
+        {
+            "product": "Inference Workstation",
+            "package": [
+                "Edge Predictor",
+                "Batch Inference Engine",
+                "Real-time InferX"
+            ]
+        },
+        {
+            "product": "Workflow Accelerator",
+            "package": [
+                "FlowStart",
+                "Pipeline Booster",
+                "TurboFlow"
+            ]
+        },
+        {
+            "product": "AutoML Workstation",
+            "package": [
+                "AutoTune",
+                "HyperParam Pro",
+                "ModelCraft"
+            ]
+        },
+        {
+            "product": "GPU Compute Rack",
+            "package": [
+                "Core Rack",
+                "Parallel Pack",
+                "AccelX"
+            ]
+        },
+        {
+            "product": "Compute Node",
+            "package": [
+                "Compute Basic",
+                "Compute Pro",
+                "Compute Elastic"
+            ]
+        },
+        {
+            "product": "Remote Render Node",
+            "package": [
+                "RenderLite",
+                "RenderPro",
+                "StudioCore"
+            ]
+        },
+        {
+            "product": "Backup Automation Engine",
+            "package": [
+                "AutoSafe",
+                "RedundancyPlus",
+                "VaultSync"
+            ]
+        },
+        {
+            "product": "Distributed Cache Node",
+            "package": [
+                "CacheLite",
+                "CacheStream",
+                "CacheBurst"
+            ]
+        },
+        {
+            "product": "ML Research Pod",
+            "package": [
+                "LabSeed",
+                "Experiment Pro",
+                "DeepThinker"
+            ]
+        },
+        {
+            "product": "AI Optimization Platform",
+            "package": [
+                "OptiCore",
+                "TunePro",
+                "AutoSmart"
+            ]
+        },
+        {
+            "product": "Streaming Ingestion Agent",
+            "package": [
+                "StreamLite",
+                "FlowIngest",
+                "EventCapturer"
+            ]
+        },
+        {
+            "product": "Log Analysis Console",
+            "package": [
+                "LogView",
+                "PatternScope",
+                "Anomalyze"
+            ]
+        },
+        {
+            "product": "Event Correlation Hub",
+            "package": [
+                "SignalMerge",
+                "AlertFusion",
+                "IncidentIQ"
+            ]
+        },
+        {
+            "product": "Data Archiver",
+            "package": [
+                "ColdVault",
+                "ArchiveNow",
+                "LongTermStore"
+            ]
+        },
+        {
+            "product": "Data Lake Interface",
+            "package": [
+                "LakeView",
+                "AquaBridge",
+                "QuerySurface"
+            ]
+        },
+        {
+            "product": "Elastic Query Engine",
+            "package": [
+                "QueryDash",
+                "FlexFetch",
+                "ElasticInsight"
+            ]
+        },
+        {
+            "product": "Virtual Lab Suite",
+            "package": [
+                "LabBasic",
+                "LabAdvanced",
+                "LabEnterprise"
+            ]
+        },
+        {
+            "product": "Federated Learning Hub",
+            "package": [
+                "NodeBridge",
+                "CrossLearn Pro",
+                "PrivacyTrain"
+            ]
+        },
+        {
+            "product": "Zero Trust Access Controller",
+            "package": [
+                "TrustLite",
+                "SecureEdge",
+                "ZTX Guardian"
+            ]
+        },
+        {
+            "product": "Quantum Simulation Node",
+            "package": [
+                "QSim Core",
+                "EntangleX",
+                "QuantumStack"
+            ]
+        },
+        {
+            "product": "AI Ethics Compliance Engine",
+            "package": [
+                "FairAudit",
+                "BiasCheck Pro",
+                "EthosShield"
+            ]
+        },
+        {
+            "product": "Intelligent Load Balancer",
+            "package": [
+                "SmartFlow",
+                "AutoScaleX",
+                "DemandBalancer"
+            ]
+        },
+        {
+            "product": "Synthetic Data Generator",
+            "package": [
+                "GenForge",
+                "DataSynth Pro",
+                "SimulMatrix"
+            ]
+        },
+        {
+            "product": "Digital Twin Builder",
+            "package": [
+                "TwinBasic",
+                "MirrorCraft",
+                "ReplicaMax"
+            ]
+        },
+        {
+            "product": "High-Throughput Data Router",
+            "package": [
+                "DataPulse",
+                "StreamSwitch",
+                "RouteXpress"
+            ]
+        },
+        {
+            "product": "Secure Model Deployment Gateway",
+            "package": [
+                "ModelSafe",
+                "DeployGuard",
+                "InferLink"
+            ]
+        }
+    ]
+}
