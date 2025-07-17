@@ -2,11 +2,9 @@ import verifiers as vf
 import re
 import json
 from datasets import load_dataset, Dataset
-from verifiers.parsers import XMLParser
-
 
 # Load your catalog data
-with open('extracted_catalog.json', 'r') as file:
+with open('verifiers/fine-tuning/extracted_catalog.json', 'r') as file:
     json_data = json.load(file)
 
 json_string = json.dumps(json_data, indent=2)
@@ -29,7 +27,7 @@ SYSTEM_PROMPT = """You are an AI assistant that helps with product and package r
 
 def get_dataset(split="train") -> Dataset:
   """Create dataset with thinking examples"""
-  with open('cleaned_combinations.json', 'r') as file:
+  with open('verifiers/fine-tuning/cleaned_combinations.json', 'r') as file:
       data = json.load(file)
 
   if split == 'train':
@@ -53,7 +51,7 @@ def get_dataset(split="train") -> Dataset:
   return Dataset.from_list(formatted_data)
 
 # Custom Parser that extends XMLParser for think/answer format
-class ThinkAnswerParser(XMLParser):
+class ThinkAnswerParser(vf.XMLParser):
     def __init__(self):
         super().__init__(['think', 'answer'])
 
@@ -325,7 +323,7 @@ vf_env = vf.SingleTurnEnv(
 
 model_name = "HuggingFaceTB/SmolLM2-135M-Instruct"
 model, tokenizer = vf.get_model_and_tokenizer(model_name)
-args = vf.grpo_defaults(run_name="gsm8k-example")
+args = vf.grpo_defaults(run_name='reverse_text_warmup')
 
 # Scale up for larger experiments
 args.per_device_train_batch_size = 4
@@ -337,8 +335,6 @@ args.num_train_epochs = 3
 # Memory optimization
 args.gradient_checkpointing = True
 args.bf16 = True
-args.vllm_server_host = "127.0.0.1"
-args.vllm_server_port = 8000
 
 # Learning schedule
 args.learning_rate = 1e-6
@@ -357,6 +353,6 @@ trainer = vf.GRPOTrainer(
     processing_class=tokenizer,
     env=vf_env,
     args=args,
-    peft_config=vf.lora_defaults()
+    #peft_config=vf.lora_defaults()
 )
 trainer.train()
