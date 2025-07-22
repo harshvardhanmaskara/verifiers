@@ -8,13 +8,28 @@ accelerate launch --config-file configs/zero3.yaml --num-processes 1 verifiers/f
 
 # convenience function for FA2 initialization
 model, tokenizer = vf.get_model_and_tokenizer("HuggingFaceTB/SmolLM2-135M-Instruct", use_liger=False)
-dataset = load_dataset('json', data_files='data/dataset.json', split='train')
+dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json', split='train')
+
+def to_chat(row):
+    # Convert question/answer pair to chat format
+    messages = [
+        {"role": "user", "content": row["question"]},
+        {"role": "assistant", "content": row["answer"]}
+    ]
+    return {"messages": messages}
+
+cols = dataset.column_names
+dataset = dataset.map(to_chat, remove_columns=cols)
+
+dataset = dataset.train_test_split(test_size=0.1, seed=42)
+train_ds = dataset["train"]
+eval_ds = dataset["test"]
 
 tok_counts = []
-for row in dataset:
-    # count tokens in (prompt, completion)
-    messages = row['question'] + row['answer'] # type: ignore
-    toks = tokenizer.apply_chat_template( 
+for row in train_ds:
+    # count tokens in chat format
+    messages = row['messages']
+    toks = tokenizer.apply_chat_template(
         messages,
         tokenize=True
     )
@@ -51,6 +66,7 @@ args = SFTConfig(
 trainer = SFTTrainer(
     model=model,
     args=args,
-    train_dataset=dataset # type: ignore
+    train_dataset=train_ds, # type: ignore
+    eval_dataset=eval_ds,  # type: ignore
 )
 trainer.train()
