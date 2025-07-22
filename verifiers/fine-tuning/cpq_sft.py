@@ -13,7 +13,6 @@ dataset = load_dataset('json', data_files='data/dataset.json', split='train')
 tok_counts = []
 for row in dataset:
     # count tokens in (prompt, completion)
-    print(dataset)
     messages = row['question'] + row['answer'] # type: ignore
     toks = tokenizer.apply_chat_template( 
         messages,
