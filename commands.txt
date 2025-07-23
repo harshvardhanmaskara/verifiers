@@ -1,8 +1,8 @@
-git clone https://github.com/willccbb/verifiers.git
+git clone git@github.com:harshvardhanmaskara/verifiers.git
 cd verifiers
 pip install uv
 uv sync --extra all && uv pip install flash-attn --no-build-isolation
 source .venv/bin/activate
 wandb login
 huggingface-cli login
-accelerate launch --config-file configs/zero3.yaml --num-processes 1 verifiers/examples/sft/reverse_text.py
+accelerate launch --config-file configs/zero3.yaml --num-processes 1 verifiers/fine-tuning/cpq_sft.py
