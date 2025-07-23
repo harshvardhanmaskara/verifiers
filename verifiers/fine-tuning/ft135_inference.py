@@ -4,7 +4,7 @@ from transformers import pipeline
 generator = pipeline("text-generation", model="harshvardhanmaskara/SmolLM2-135M-CPQ-SFT")
 
 # Answer a single prompt
-prompt = "Can you help me find a indoor fabrics that's good for casual comfort? I care about price point, material type, color, durability"
+prompt = "I want a high performance compute cluster for AI training with high memory."
 system_prompt = """Your task is to answer the user's question in this EXACT format:
 1. Start with reasoning inside <think> tags about the user's needs
 2. Make a search() tool call inside <tool> tags with relevant parameters
