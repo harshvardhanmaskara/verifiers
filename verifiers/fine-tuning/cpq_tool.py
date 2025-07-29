@@ -4,7 +4,7 @@ from datasets import load_dataset
 
 """
 inference:
-CUDA_VISIBLE_DEVICES=0 vf-vllm --model harshvardhanmaskara/SmolLM2-135M-CPQ-GRPO --enforce-eager
+CUDA_VISIBLE_DEVICES=0 vf-vllm --model harshvardhanmaskara/SmolLM2-135M-CPQ-SFT --enforce-eager
 
 training:
 CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs/zero3.yaml verifiers/fine-tuning/cpq_tool.py
@@ -74,15 +74,15 @@ Now let me validate the Dell Latitude configuration to ensure it meets requireme
 # Load the CPQ dataset
 dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json', split='train')
 
-def to_chat(row):
-    # Only need the question for GRPO
-    messages = [
-        {"role": "user", "content": row["question"]}
-    ]
-    return {"messages": messages}
+# def to_chat(row):
+#     # Only need the question for GRPO
+#     messages = [
+#         {"role": "user", "content": row["question"]}
+#     ]
+#     return {"messages": messages}
 
-cols = dataset.column_names
-dataset = dataset.map(to_chat, remove_columns=cols)
+# cols = dataset.column_names
+# dataset = dataset.map(to_chat, remove_columns=cols)
 
 dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
@@ -90,6 +90,7 @@ eval_ds = dataset["test"]
 
 # Create the CPQ environment with tools
 vf_env = vf.ToolEnv(
+    format_prompt=False,
     dataset=train_ds,
     system_prompt=TOOL_PROMPT,
     few_shot=[],
