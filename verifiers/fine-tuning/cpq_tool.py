@@ -72,17 +72,7 @@ Now let me validate the Dell Latitude configuration to ensure it meets requireme
 """
 
 # Load the CPQ dataset
-dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json', split='train')
-
-# def to_chat(row):
-#     # Only need the question for GRPO
-#     messages = [
-#         {"role": "user", "content": row["question"]}
-#     ]
-#     return {"messages": messages}
-
-# cols = dataset.column_names
-# dataset = dataset.map(to_chat, remove_columns=cols)
+dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json')
 
 dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
@@ -108,7 +98,7 @@ run_name = "cpq-grpo_" + model_name.split("/")[-1].lower()
 training_args = vf.grpo_defaults(run_name=run_name)
 training_args.num_iterations = 2
 training_args.per_device_train_batch_size = 4
-training_args.num_generations = 8
+training_args.num_generations = 5
 training_args.gradient_accumulation_steps = 2
 training_args.max_length = 4096
 training_args.learning_rate = 2e-5
