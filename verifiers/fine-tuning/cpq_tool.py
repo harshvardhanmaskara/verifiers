@@ -72,7 +72,7 @@ Now let me validate the Dell Latitude configuration to ensure it meets requireme
 """
 
 # Load the CPQ dataset
-dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json')
+dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json', split='train')
 
 dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
