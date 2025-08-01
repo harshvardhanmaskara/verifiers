@@ -2,12 +2,12 @@ from .ask import ask
 from .calculator import calculator
 from .search import search
 from .python import python
-from .cpq_search import cpq_search
-from .cpq_validate import cpq_validate
+from .search_product import search_product
+from .validate_product import validate_product
 
 # Import SmolaAgents tools when available
 try:
     from .smolagents import CalculatorTool
-    __all__ = ["ask", "calculator", "search", "python", "cpq_search", "cpq_validate", "CalculatorTool"]
+    __all__ = ["ask", "calculator", "search", "python", "search_product", "validate_product", "CalculatorTool"]
 except ImportError:
-    __all__ = ["ask", "calculator", "search", "python", "cpq_search", "cpq_validate"] 
+    __all__ = ["ask", "calculator", "search", "python", "search_product", "validate_product"] 

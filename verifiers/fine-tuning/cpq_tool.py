@@ -1,6 +1,7 @@
 import verifiers as vf
-from verifiers.tools import cpq_search, cpq_validate
+from verifiers.tools import search_product, validate_product
 from datasets import load_dataset
+from custom_cpq_rubric import CustomCPQRubric
 
 """
 inference:
@@ -11,64 +12,45 @@ CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs
 """
 
 TOOL_PROMPT = """
-Think step-by-step inside <think>...</think> tags in each message, then either call a tool inside <tool>...</tool> tags, or give your final answer inside <answer>...</answer> tags.
+  You are a smart product retrieval assistant. Your job is to understand the user query and help them solve it. You must follow the steps below in order to solve the user query:
 
-You have access to the following tools to help solve CPQ (Configure, Price, Quote) problems:
+  Think step-by-step inside <think>...</think> tags in each message, then either call a tool inside <tool>...</tool> tags, or give your final answer inside <answer>...</answer> tags.
 
-{tool_descriptions}
+  You have access to the following tools to search and retrieve an appropriate product for the user's configuration query:
 
-Tools can be called by writing a JSON command inside <tool> tags with:
-- "name": the name of the tool to use
-- "args": the arguments for the tool
+  search_product Tool: Searches and retrieves the best product fit for the user's configuration query.
+  - Args
+    "query": The user query in plain english text
+  - Returns
+    Formatted string with the product and its associated features in the most suitable configuration
+  - Example usage:
+    <tool>
+    {"name": "search_product", "args": {"query": "user query in natural language"}}
+    </tool>
 
-Example usage:
-<tool>
-{{"name": "cpq_search", "args": {{"query": "laptop configurations", "search_type": "product", "max_results": 3}}}}
-</tool>
+  validate_product Tool: Validates the product retrieved by the search tool before returning it as the final answer
+  - Args
+    "product": The product configuration returned by the search tool
+  - Returns
+    "Valid" or "Not Valid" as a string
+  - Example usage:
+    <tool>
+    {"name": "validate_product", "args": {"product": {"Product": "name", "Features": ["list of features"], "Price": "price"}}}
+    </tool>
 
-<tool>
-{{"name": "cpq_validate", "args": {{"validation_type": "configuration", "data": {{"cpu": "Intel i7", "ram": "16GB", "storage": "512GB"}}}}}}
-</tool>
+  IMPORTANT: Only call ONE tool at a time. After calling a tool, wait for the result before proceeding. Do not simulate tool results or continue the conversation beyond the tool call.
 
-After concluding your message with a tool call,
-you will then see the tool's output inside <result> tags as a new message. \
-You may call tools multiple times if needed. \
-Tool state does not persist between calls. \
-Always use tools to solve problems whenever possible, rather than using your own knowledge.
+  The <answer>...</answer> tags should contain only your final answer as a clear, concise response.
 
-The <answer>...</answer> tags should contain only your final answer as a clear, concise response.
+  Example to start the conversation:
 
-Example:
-<think>
-Let me search for available laptop configurations first, then validate the selected configuration.
-</think>
-<tool>
-{{"name": "cpq_search", "args": {{"query": "laptop configurations", "search_type": "product", "max_results": 3}}}}
-</tool>
-<result>
-• Dell Latitude 5520 - Intel i7, 16GB RAM, 512GB SSD - $1,299
-• HP EliteBook 840 - Intel i5, 8GB RAM, 256GB SSD - $899
-• Lenovo ThinkPad X1 - Intel i7, 32GB RAM, 1TB SSD - $1,599
-</result>
-<think>
-Now let me validate the Dell Latitude configuration to ensure it meets requirements.
-</think>
-<tool>
-{{"name": "cpq_validate", "args": {{"validation_type": "configuration", "data": {{"cpu": "Intel i7", "ram": "16GB", "storage": "512GB"}}}}}}
-</tool>
-<result>
-✓ Configuration is valid
-✓ All components are compatible
-✓ Meets minimum system requirements
-✓ Within budget constraints
-</result>
-<answer>
-{{
-  "Product": "Dell Latitude 5520",
-  "Features": ["Intel i7 processor", "16GB RAM", "512GB SSD", "Compact design"],
-  "Price": "$1,299"
-}}
-</answer>
+  <think>
+  Let me search for available laptop configurations first, then validate the selected configuration.
+  </think>
+
+  <tool>
+  {"name": "search_product", "args": {"query": "user query in natural language"}}
+  </tool>
 """
 
 # Load the CPQ dataset
@@ -78,14 +60,22 @@ dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
 eval_ds = dataset["test"]
 
-# Create the CPQ environment with tools
+# Create custom rubric for CPQ environment
+custom_rubric = CustomCPQRubric(
+    parser=vf.XMLParser(fields=["think", ("tool", "answer")]),
+    env_parser=vf.XMLParser(fields=["result"]),
+    tools=[search_product, validate_product]
+)
+
+# Create the CPQ environment with custom rubric
 vf_env = vf.ToolEnv(
     format_prompt=False,
     dataset=train_ds,
     system_prompt=TOOL_PROMPT,
     few_shot=[],
-    tools=[cpq_search, cpq_validate],
-    max_steps=5  # Allow more steps for CPQ workflow
+    tools=[search_product, validate_product],
+    max_steps=3,  # Allow more steps for CPQ workflow
+    rubric=custom_rubric  # Use our custom rubric
 )
 print(vf_env.system_prompt)
 
@@ -100,7 +90,7 @@ training_args.num_iterations = 2
 training_args.per_device_train_batch_size = 4
 training_args.num_generations = 5
 training_args.gradient_accumulation_steps = 2
-training_args.max_length = 4096
+training_args.max_length = 2048  # Reduced to prevent excessive length
 training_args.learning_rate = 2e-5
 training_args.num_train_epochs = 3
 training_args.weight_decay = 0.01
@@ -113,6 +103,11 @@ training_args.save_only_model = True
 training_args.log_on_each_node = True
 training_args.push_to_hub = True
 training_args.hub_model_id = "harshvardhanmaskara/SmolLM2-135M-CPQ-GRPO"
+
+# Additional parameters to prevent reward hacking
+training_args.frequency_penalty = 0.1  # Penalize repeated tokens
+training_args.top_k = 50  # Limit token selection diversity
+training_args.temperature = 0.7  # Moderate temperature to reduce randomness
 
 # Create and start training
 trainer = vf.GRPOTrainer(
