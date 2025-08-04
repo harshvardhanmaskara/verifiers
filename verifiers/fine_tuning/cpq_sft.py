@@ -8,7 +8,7 @@ accelerate launch --config-file configs/zero3.yaml --num-processes 1 verifiers/f
 
 # convenience function for FA2 initialization
 model, tokenizer = vf.get_model_and_tokenizer("HuggingFaceTB/SmolLM2-135M-Instruct", use_liger=False)
-dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json', split='train')
+dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/simple_dataset.json', split='train')
 
 def to_chat(row):
     # Convert question/answer pair to chat format
@@ -60,7 +60,7 @@ args = SFTConfig(
     save_only_model=True,
     log_on_each_node=True,
     push_to_hub=True,
-    hub_model_id="harshvardhanmaskara/SmolLM2-135M-CPQ-SFT",
+    hub_model_id="harshvardhanmaskara/SmolLM2-135M-SFT-2.0Z",
 )
 
 trainer = SFTTrainer(
