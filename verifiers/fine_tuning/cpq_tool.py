@@ -5,7 +5,7 @@ from custom_cpq_rubric import CustomCPQRubric
 
 """
 inference:
-NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=0 vf-vllm --model meta-llama/Llama-3.2-1B-Instruct --enforce-eager
+NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=0 vf-vllm --model harshvardhanmaskara/SmolLM2-135M-CPQ-SFT --enforce-eager
 
 training:
 NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs/zero3.yaml verifiers/fine_tuning/cpq_tool.py
@@ -72,9 +72,9 @@ vf_env = vf.ToolEnv(
 print(vf_env.system_prompt)
 
 # Load the SFT model
-model_name = "meta-llama/Llama-3.2-1B-Instruct"
+model_name = "harshvardhanmaskara/SmolLM2-135M-CPQ-SFT"
 model, tokenizer = vf.get_model_and_tokenizer(model_name, use_liger=False)
-run_name = "cpq-grpo_" + model_name.split("/")[-1].lower()
+run_name = "simple-grpo_" + model_name.split("/")[-1].lower()
 
 # Configure training arguments
 training_args = vf.grpo_defaults(run_name=run_name)
