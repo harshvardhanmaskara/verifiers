@@ -22,19 +22,21 @@ class CustomCPQRubric(Rubric):
             self.structural_format_reward_func,
             self.tool_usage_reward_func,
             self.tool_formatting_reward_func,
+            self.answer_summary_reward_func,
             self.length_penalty_reward_func,
         ]
         self.reward_weights = [
-            0.4,  # Structural format
-            0.3,  # Tool usage
-            0.2,  # Tool formatting
-            0.1,  # Length penalty (negative)
+            0.25,  # Structural format
+            0.35,  # Tool usage (most important)
+            0.25,  # Tool formatting
+            0.10,  # Answer summary
+            0.05,  # Length penalty (negative)
         ]
 
     def structural_format_reward_func(self, completion: List[Dict[str, str]], **kwargs) -> float:
         """
-        Reward function that evaluates structural format compliance.
-        Assigns partial rewards for each aspect of the format.
+        Reward function that evaluates structural format compliance for the simplified task.
+        Checks for: think tags, tool tags, answer tags, and proper structure.
         """
         if not completion:
             return 0.0
@@ -52,25 +54,20 @@ class CustomCPQRubric(Rubric):
                     total_reward += 0.25
                 max_possible += 0.25
                 
-                # Check for either tool or answer tags (0.25 points)
+                # Check for tool tags (0.25 points)
                 tool_match = re.search(r'<tool>(.*?)</tool>', content, re.DOTALL)
-                answer_match = re.search(r'<answer>(.*?)</answer>', content, re.DOTALL)
-                if tool_match or answer_match:
+                if tool_match:
                     total_reward += 0.25
                 max_possible += 0.25
                 
-                # Check for proper XML structure (0.25 points)
-                if '<think>' in content and '</think>' in content:
-                    if '<tool>' in content and '</tool>' in content:
-                        # Has both think and tool
-                        total_reward += 0.25
-                    elif '<answer>' in content and '</answer>' in content:
-                        # Has both think and answer
-                        total_reward += 0.25
+                # Check for answer tags (0.25 points)
+                answer_match = re.search(r'<answer>(.*?)</answer>', content, re.DOTALL)
+                if answer_match:
+                    total_reward += 0.25
                 max_possible += 0.25
                 
-                # Check for no mixed tags (0.25 points)
-                if not (tool_match and answer_match):
+                # Check for all three tags present (0.25 points)
+                if think_match and tool_match and answer_match:
                     total_reward += 0.25
                 max_possible += 0.25
         
@@ -78,7 +75,8 @@ class CustomCPQRubric(Rubric):
 
     def tool_usage_reward_func(self, completion: List[Dict[str, str]], **kwargs) -> float:
         """
-        Reward function that checks if one of the two tools has been called.
+        Reward function that checks if exactly one search_product tool call was made.
+        This is the most important aspect of the task.
         """
         tool_calls = 0
         
@@ -90,17 +88,23 @@ class CustomCPQRubric(Rubric):
                     tool_content = tool_match.group(1).strip()
                     try:
                         command = json.loads(tool_content)
-                        if isinstance(command, dict) and command.get("name") in self.tools:
+                        if isinstance(command, dict) and command.get("name") == "search_product":
                             tool_calls += 1
                     except json.JSONDecodeError:
                         pass
         
-        # Reward if at least one tool was called
-        return 1.0 if tool_calls > 0 else 0.0
+        # Reward for exactly one tool call (not multiple, not zero)
+        if tool_calls == 1:
+            return 1.0
+        elif tool_calls == 0:
+            return 0.0
+        else:
+            return 0.5  # Partial reward for multiple calls
 
     def tool_formatting_reward_func(self, completion: List[Dict[str, str]], **kwargs) -> float:
         """
-        Reward function that verifies tools are called with correct JSON formatting.
+        Reward function that verifies search_product is called with correct JSON formatting and arguments.
+        Specifically checks for the correct tool name and query argument.
         """
         correct_formats = 0
         total_attempts = 0
@@ -121,11 +125,13 @@ class CustomCPQRubric(Rubric):
                                 tool_name = command["name"]
                                 args = command["args"]
                                 
-                                # Check if it's one of our tools
-                                if tool_name in self.tools:
-                                    # Check if args is a dictionary
-                                    if isinstance(args, dict):
-                                        correct_formats += 1
+                                # Check if it's search_product tool
+                                if tool_name == "search_product":
+                                    # Check if args is a dictionary with query field
+                                    if isinstance(args, dict) and "query" in args:
+                                        # Check if query is a string (natural language)
+                                        if isinstance(args["query"], str) and len(args["query"].strip()) > 0:
+                                            correct_formats += 1
                     except json.JSONDecodeError:
                         pass
         
@@ -160,3 +166,26 @@ class CustomCPQRubric(Rubric):
         
         # Clamp to reasonable range
         return max(-1.0, total_penalty)
+
+    def answer_summary_reward_func(self, completion: List[Dict[str, str]], **kwargs) -> float:
+        """
+        Reward function that checks if the model provided a summary in the answer tags.
+        """
+        for msg in completion:
+            if msg['role'] == 'assistant':
+                content = msg['content']
+                answer_match = re.search(r'<answer>(.*?)</answer>', content, re.DOTALL)
+                if answer_match:
+                    answer_content = answer_match.group(1).strip()
+                    # Check if the answer contains a meaningful summary
+                    if len(answer_content) > 10 and len(answer_content) < 500:
+                        # Check for summary-like content (mentions reasoning, tool call, etc.)
+                        summary_keywords = ['reason', 'think', 'search', 'tool', 'call', 'found', 'retrieve', 'product']
+                        if any(keyword in answer_content.lower() for keyword in summary_keywords):
+                            return 1.0
+                        else:
+                            return 0.5  # Partial reward for having answer tags but not great content
+                    else:
+                        return 0.0  # Too short or too long
+        
+        return 0.0  # No answer tags found

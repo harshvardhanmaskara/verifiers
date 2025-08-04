@@ -1,5 +1,5 @@
 import verifiers as vf
-from verifiers.tools import search_product, validate_product
+from verifiers.tools import search_product
 from datasets import load_dataset
 from custom_cpq_rubric import CustomCPQRubric
 
@@ -11,12 +11,12 @@ training:
 CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs/zero3.yaml verifiers/fine-tuning/cpq_tool.py
 """
 
-TOOL_PROMPT = """
-  You are a smart product retrieval assistant. Your job is to understand the user query and help them solve it. You must follow the steps below in order to solve the user query:
+TOOL_PROMPT = f"""
+  You are a smart assistant whose job is to understand the user query and solve it by making a tool call with the appropriate argument. Follow the steps listed below:
 
-  Think step-by-step inside <think>...</think> tags in each message, then either call a tool inside <tool>...</tool> tags, or give your final answer inside <answer>...</answer> tags.
+  Think step-by-step inside <think>...</think> tags about the user query and understand what it is asking. Then call a search tool inside <tool>...</tool> tags, and summarize what you did inside <answer>...</answer> tags.
 
-  You have access to the following tools to search and retrieve an appropriate product for the user's configuration query:
+  You have access to the following search tool to search and retrieve an appropriate product for the user's configuration query:
 
   search_product Tool: Searches and retrieves the best product fit for the user's configuration query.
   - Args
@@ -25,32 +25,24 @@ TOOL_PROMPT = """
     Formatted string with the product and its associated features in the most suitable configuration
   - Example usage:
     <tool>
-    {"name": "search_product", "args": {"query": "user query in natural language"}}
+    {{"name": "search_product", "args": {{"query": "user query in natural language"}}}}
     </tool>
 
-  validate_product Tool: Validates the product retrieved by the search tool before returning it as the final answer
-  - Args
-    "product": The product configuration returned by the search tool
-  - Returns
-    "Valid" or "Not Valid" as a string
-  - Example usage:
-    <tool>
-    {"name": "validate_product", "args": {"product": {"Product": "name", "Features": ["list of features"], "Price": "price"}}}
-    </tool>
-
-  IMPORTANT: Only call ONE tool at a time. After calling a tool, wait for the result before proceeding. Do not simulate tool results or continue the conversation beyond the tool call.
-
-  The <answer>...</answer> tags should contain only your final answer as a clear, concise response.
+  The <answer>...</answer> tags should contain only a summary of what you did.
 
   Example to start the conversation:
 
   <think>
-  Let me search for available laptop configurations first, then validate the selected configuration.
+  The user is looking for a high performance gaming laptop. Let me use the search tool to find a suitable product.
   </think>
 
   <tool>
-  {"name": "search_product", "args": {"query": "user query in natural language"}}
+  {{"name": "search_product", "args": {{"query": "High performance gaming laptop"}}}}
   </tool>
+
+  <answer>
+  I reasoned about the user's product needs and made a tool call to retrieve the appropriate option.
+  </answer>
 """
 
 # Load the CPQ dataset
@@ -64,7 +56,7 @@ eval_ds = dataset["test"]
 custom_rubric = CustomCPQRubric(
     parser=vf.XMLParser(fields=["think", ("tool", "answer")]),
     env_parser=vf.XMLParser(fields=["result"]),
-    tools=[search_product, validate_product]
+    tools=[search_product]
 )
 
 # Create the CPQ environment with custom rubric
@@ -73,7 +65,7 @@ vf_env = vf.ToolEnv(
     dataset=train_ds,
     system_prompt=TOOL_PROMPT,
     few_shot=[],
-    tools=[search_product, validate_product],
+    tools=[search_product],
     max_steps=3,  # Allow more steps for CPQ workflow
     rubric=custom_rubric  # Use our custom rubric
 )
