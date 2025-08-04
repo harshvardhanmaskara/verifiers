@@ -44,7 +44,7 @@ print(f"Median tokens: {sorted(tok_counts)[len(tok_counts) // 2]}")
 
 args = SFTConfig(
     max_length=4096,
-    output_dir="sft-warmup-cpq",
+    output_dir="sft-warmup-2.0",
     per_device_train_batch_size=3,
     gradient_accumulation_steps=2,
     gradient_checkpointing=True,
@@ -60,7 +60,7 @@ args = SFTConfig(
     save_only_model=True,
     log_on_each_node=True,
     push_to_hub=True,
-    hub_model_id="harshvardhanmaskara/SmolLM2-135M-SFT-2.0Z",
+    hub_model_id="harshvardhanmaskara/SmolLM2-135M-SFT-2.0",
 )
 
 trainer = SFTTrainer(
