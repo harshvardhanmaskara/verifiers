@@ -5,10 +5,10 @@ from custom_cpq_rubric import CustomCPQRubric
 
 """
 inference:
-CUDA_VISIBLE_DEVICES=0 vf-vllm --model harshvardhanmaskara/SmolLM2-135M-CPQ-SFT --enforce-eager
+NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=0 vf-vllm --model meta-llama/Llama-3.2-1B-Instruct --enforce-eager
 
 training:
-CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs/zero3.yaml verifiers/fine-tuning/cpq_tool.py
+NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs/zero3.yaml verifiers/fine_tuning/cpq_tool.py
 """
 
 TOOL_PROMPT = f"""
@@ -46,7 +46,7 @@ TOOL_PROMPT = f"""
 """
 
 # Load the CPQ dataset
-dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/dataset.json', split='train')
+dataset = load_dataset('json', data_files='verifiers/fine_tuning/data/dataset.json', split='train')
 
 dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
@@ -72,7 +72,7 @@ vf_env = vf.ToolEnv(
 print(vf_env.system_prompt)
 
 # Load the SFT model
-model_name = "harshvardhanmaskara/SmolLM2-135M-CPQ-SFT"
+model_name = "meta-llama/Llama-3.2-1B-Instruct"
 model, tokenizer = vf.get_model_and_tokenizer(model_name, use_liger=False)
 run_name = "cpq-grpo_" + model_name.split("/")[-1].lower()
 

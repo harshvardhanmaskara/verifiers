@@ -11,6 +11,7 @@ from verifiers import (
     ToolRubric,
     XMLParser
 )
+from ..fine_tuning.custom_cpq_rubric import CustomCPQRubric
 from verifiers.prompts import DEFAULT_TOOL_PROMPT_TEMPLATE
 
 def infer_schema_from_function(func: Callable) -> Dict[str, Any]:
@@ -90,7 +91,7 @@ class ToolEnv(MultiTurnEnv):
                  parser: XMLParser = XMLParser(fields=["think", ("tool", "answer")]),
                  env_parser: XMLParser = XMLParser(fields=["result"]),
                  max_turns: int = 10, **kwargs):
-        rubric = ToolRubric(tools=tools, parser=parser, env_parser=env_parser)
+        rubric = CustomCPQRubric(tools=tools, parser=parser, env_parser=env_parser)
         self.tool_schemas = [infer_schema_from_function(tool) for tool in tools]
         self.tools = {tool.__name__: tool for tool in tools}
         
@@ -102,10 +103,11 @@ class ToolEnv(MultiTurnEnv):
         super().__init__(
             system_prompt=formatted_prompt,
             parser=parser,
-            rubric=rubric,
             max_turns=max_turns,
             **kwargs
         )
+        # Set the rubric after calling super().__init__ to avoid the duplicate parameter error
+        self.rubric = rubric
         self.env_parser = env_parser
 
     def get_reward_funcs(self, **kwargs) -> List[RewardFunc]:
