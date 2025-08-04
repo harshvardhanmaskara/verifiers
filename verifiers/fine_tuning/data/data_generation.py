@@ -266,7 +266,7 @@ def main():
     
     # Generate dataset
     try:
-        dataset = generator.generate_dataset(target_count=500)
+        dataset = generator.generate_dataset(target_count=100)
         
         # Analyze the generated dataset
         generator.analyze_dataset(dataset)
