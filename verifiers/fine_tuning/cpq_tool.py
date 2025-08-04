@@ -5,7 +5,7 @@ from custom_cpq_rubric import CustomCPQRubric
 
 """
 inference:
-NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=0 vf-vllm --model harshvardhanmaskara/SmolLM2-135M-CPQ-SFT --enforce-eager
+NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=0 vf-vllm --model harshvardhanmaskara/SmolLM2-135M-SFT-2.0 --enforce-eager
 
 training:
 NCCL_P2P_DISABLE=1 NCCL_IB_DISABLE=1 NCCL_SHM_DISABLE=1 CUDA_VISIBLE_DEVICES=1 accelerate launch --num-processes 1 --config-file configs/zero3.yaml verifiers/fine_tuning/cpq_tool.py
@@ -46,7 +46,7 @@ TOOL_PROMPT = f"""
 """
 
 # Load the CPQ dataset
-dataset = load_dataset('json', data_files='verifiers/fine_tuning/data/dataset.json', split='train')
+dataset = load_dataset('json', data_files='verifiers/fine_tuning/data/simple_dataset.json', split='train')
 
 dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
@@ -66,13 +66,13 @@ vf_env = vf.ToolEnv(
     system_prompt=TOOL_PROMPT,
     few_shot=[],
     tools=[search_product],
-    max_steps=3,  # Allow more steps for CPQ workflow
+    max_steps=1,  # Allow more steps for CPQ workflow
     rubric=custom_rubric  # Use our custom rubric
 )
 print(vf_env.system_prompt)
 
 # Load the SFT model
-model_name = "harshvardhanmaskara/SmolLM2-135M-CPQ-SFT"
+model_name = "harshvardhanmaskara/SmolLM2-135M-SFT-2.0"
 model, tokenizer = vf.get_model_and_tokenizer(model_name, use_liger=False)
 run_name = "simple-grpo_" + model_name.split("/")[-1].lower()
 
@@ -98,7 +98,6 @@ training_args.hub_model_id = "harshvardhanmaskara/SmolLM2-135M-CPQ-GRPO"
 
 # Additional parameters to prevent reward hacking
 training_args.frequency_penalty = 0.1  # Penalize repeated tokens
-training_args.top_k = 50  # Limit token selection diversity
 training_args.temperature = 0.7  # Moderate temperature to reduce randomness
 
 # Create and start training
