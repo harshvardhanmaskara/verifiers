@@ -3,12 +3,12 @@ from datasets import load_dataset
 from trl import SFTTrainer, SFTConfig
 
 """
-accelerate launch --config-file configs/zero3.yaml --num-processes 1 verifiers/fine-tuning/cpq_sft.py
+accelerate launch --config-file configs/zero3.yaml --num-processes 1 verifiers/fine_tuning/cpq_sft.py
 """
 
 # convenience function for FA2 initialization
 model, tokenizer = vf.get_model_and_tokenizer("HuggingFaceTB/SmolLM2-135M-Instruct", use_liger=False)
-dataset = load_dataset('json', data_files='verifiers/fine-tuning/data/simple_dataset.json', split='train')
+dataset = load_dataset('json', data_files='verifiers/fine_tuning/data/simple_dataset.json', split='train')
 
 def to_chat(row):
     # Convert question/answer pair to chat format
