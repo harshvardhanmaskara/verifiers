@@ -46,7 +46,7 @@ TOOL_PROMPT = f"""
 """
 
 # Load the CPQ dataset
-dataset = load_dataset('json', data_files='verifiers/fine_tuning/data/simple_dataset.json', split='train')
+dataset = load_dataset('json', data_files='verifiers/fine_tuning/data/dataset_grpo.json', split='train')
 
 dataset = dataset.train_test_split(test_size=0.1, seed=42)
 train_ds = dataset["train"]
@@ -78,13 +78,13 @@ run_name = "simple-grpo_" + model_name.split("/")[-1].lower()
 
 # Configure training arguments
 training_args = vf.grpo_defaults(run_name=run_name)
-training_args.num_iterations = 2
+training_args.num_iterations = 1
 training_args.per_device_train_batch_size = 4
 training_args.num_generations = 8
 training_args.gradient_accumulation_steps = 2
-training_args.max_length = 2048  # Reduced to prevent excessive length
+training_args.max_length = 1024  # Reduced to prevent excessive length
 training_args.learning_rate = 2e-5
-training_args.num_train_epochs = 1
+training_args.max_steps = 100
 training_args.weight_decay = 0.01
 training_args.max_grad_norm = 1.0
 training_args.report_to = "wandb"
