@@ -4,7 +4,7 @@ from transformers import pipeline
 generator = pipeline("text-generation", model="harshvardhanmaskara/SmolLM2-135M-CPQ-GRPO")
 
 # Answer a single prompt
-prompt = "I want a high performance AI inference server"
+prompt = "I want a high performance compute cluster for AI training with high memory."
 system_prompt = f"""
   You are a smart assistant whose job is to understand the user query and solve it by making a tool call with the appropriate argument. Follow the steps listed below:
 

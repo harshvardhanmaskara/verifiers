@@ -4,39 +4,39 @@ from transformers import pipeline
 generator = pipeline("text-generation", model="HuggingFaceTB/SmolLM2-135M-Instruct")
 
 # Answer a single prompt
-prompt = "Can you recommend an Italian sports car that is good for track driving? I care about price point, material type, color, durability"
-system_prompt = """Your task is to answer the user's question in this EXACT format:
-1. Start with reasoning inside <think> tags about the user's needs
-2. Make a search() tool call inside <tool> tags with relevant parameters
-3. Make a validate() tool call inside <tool> tags with validation parameters
-4. Provide the final recommendation inside <answer> tags as a JSON object with exactly 3 fields: Product, Features, Price
+prompt = "I want a high performance compute cluster for AI training with high memory."
+system_prompt = f"""
+  You are a smart assistant whose job is to understand the user query and solve it by making a tool call with the appropriate argument. Follow the steps listed below:
 
-The response should be concise, practical, and directly address the user's request. Do not include unnecessary information or explanations outside of the specified tags.
+  Think step-by-step inside <think>...</think> tags about the user query and understand what it is asking. Then call a search tool inside <tool>...</tool> tags, and summarize what you did inside <answer>...</answer> tags.
 
-IMPORTANT: The <answer> section must contain ONLY a valid JSON object with these exact fields:
-- "Product": A real product name that exists in the current market
-- "Features": An array of 3-5 key features that justify the recommendation
-- "Price": A realistic price in USD format (e.g., "$1,299")
+  You have access to the following search tool to search and retrieve an appropriate product for the user's configuration query:
 
-Example format:
-<think>
-[Brief reasoning about user needs and requirements]
-</think>
+  search_product Tool: Searches and retrieves the best product fit for the user's configuration query.
+  - Args
+    "query": The user query in plain english text
+  - Returns
+    Formatted string with the product and its associated features in the most suitable configuration
+  - Example usage:
+    <tool>
+    {{"name": "search_product", "args": {{"query": "user query in natural language"}}}}
+    </tool>
 
-<tool>
-search(category="[category]", requirements={"[key1]": "[value1]", "[key2]": "[value2]"}, filters={"[filter1]": "[value1]"})
-</tool>
+  The <answer>...</answer> tags should contain only a summary of what you did.
 
-<tool>
-validate(product_id="[id]", user_requirements={"[req1]": "[value1]", "[req2]": "[value2]"}, compatibility_check=true)
-</tool>
+  Example to start the conversation:
 
-<answer>
-{
-  "Product": "Real Product Name Model XYZ",
-  "Features": ["Feature 1 that meets user needs", "Feature 2 for specific requirement", "Feature 3 for performance", "Feature 4 for value"],
-  "Price": "$X,XXX"
-}
-</answer>"""
+  <think>
+  The user is looking for a high performance gaming laptop. Let me use the search tool to find a suitable product.
+  </think>
+
+  <tool>
+  {{"name": "search_product", "args": {{"query": "High performance gaming laptop"}}}}
+  </tool>
+
+  <answer>
+  I reasoned about the user's product needs and made a tool call to retrieve the appropriate option.
+  </answer>
+"""
 response = generator([{"role": "system", "content": system_prompt}, {"role": "user", "content": prompt}], max_new_tokens=1000, return_full_text=True)[0]
 print(response["generated_text"][2]['content'])
